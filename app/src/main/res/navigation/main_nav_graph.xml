@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainMenuFragment">
+
+    <fragment
+        android:id="@+id/enterAmountDataFragment"
+        android:name="com.zeal.paymentassignment.ui.EnterAmountDataFragment"
+        android:label="EnterAmountDataFragment" >
+        <action
+            android:id="@+id/action_enterAmountDataFragment_to_swipeCardFragment"
+            app:destination="@id/swipeCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/swipeCardFragment"
+        android:name="com.zeal.paymentassignment.ui.SwipeCardFragment"
+        android:label="SwipeCardFragment" >
+        <action
+            android:id="@+id/action_swipeCardFragment_to_printReceiptFragment"
+            app:destination="@id/printReceiptFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/printReceiptFragment"
+        android:name="com.zeal.paymentassignment.ui.PrintReceiptFragment"
+        android:label="PrintReceiptFragment" >
+        <action
+            android:id="@+id/action_printReceiptFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainMenuFragment"
+        android:name="com.zeal.paymentassignment.ui.MainMenuFragment"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action
+            android:id="@+id/action_mainMenuFragment_to_enterAmountDataFragment"
+            app:destination="@id/enterAmountDataFragment" />
+    </fragment>
+</navigation>
